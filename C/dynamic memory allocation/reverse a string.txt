@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char* originalString;
+    char* reversedString;
+    int length;
+
+    // Input the string
+    printf("Enter a string: ");
+    scanf("%ms", &originalString);  // %ms allocates memory dynamically for the input string
+
+    // Calculate the length of the original string
+    length = strlen(originalString);
+
+    // Allocate memory for the reversed string
+    reversedString = (char*)malloc((length + 1) * sizeof(char));  // +1 for the null terminator
+
+    if (reversedString == NULL) {
+        printf("Memory allocation failed.\n");
+        free(originalString);  // Free the previously allocated memory
+        return 1;
+    }
+
+    // Reverse the string
+    for (int i = 0; i < length; ++i) {
+        reversedString[i] = originalString[length - i - 1];
+    }
+    reversedString[length] = '\0';  // Add the null terminator
+
+    // Display the reversed string
+    printf("Reversed string: %s\n", reversedString);
+
+    // Free allocated memory
+    free(originalString);
+    free(reversedString);
+
+    return 0;
+}

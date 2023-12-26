@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    
+    printf("Give size of the array: ");
+    scanf("%d", &N);
+    
+    int arr[N];
+    int *cell = arr; // cell points to arr[0]
+    
+    // Entering N elements of arr
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < N; i++) {
+        printf("Enter element number %d: ", i + 1);
+        scanf("%d", cell);
+        cell++;
+    }
+    
+    // Printing N elements of arr
+    printf("Array:\n");
+    cell = arr; // Reset cell to point to arr[0]
+    for (i = 0; i < N; i++) {
+        printf("Element number %d = %d\n", i + 1, *cell);
+        cell++;
+    }
+    
+    return 0;
+}

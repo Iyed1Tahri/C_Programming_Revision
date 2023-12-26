@@ -1,0 +1,29 @@
+// Add Two Distances (in Inch-Feet)
+#include <stdio.h>
+
+typedef struct{
+    float inches;
+    float feets ;
+}distances;
+int main() {
+    distances d1; distances d2;
+   
+    printf("enter distant 1 mesure for feet: ");
+    scanf("%f", &d1.feets);
+    printf("enter distant 1 mesure for inches: ");
+    scanf("%f", &d1.inches);
+    
+     printf("enter distant 2 mesure for feet: ");
+    scanf("%f", &d2.feets);
+    printf("enter distant 2 mesure for inches: ");
+    scanf("%f", &d2.inches);
+    
+    float inch = d2.inches + d1.inches;
+    float feet = d2.feets + d1.feets;
+    
+    printf("the sum of d1 and d2 : %f inches and %f feets",inch ,feet);
+    
+   
+
+    return 0;
+}
