@@ -1,0 +1,28 @@
+// Function to create a new node and add it to the end of the linked list
+void create() {
+    struct node* temp; // Declare a temporary pointer of type 'struct node'
+    
+    // Creating a new node by allocating memory dynamically
+    temp = (struct node*)malloc(sizeof(struct node));
+    
+    // Prompting the user to input data for the new node
+    printf("Enter node data: ");
+    scanf("%d", &temp->data); // Store the entered data in the 'data' field of the new node
+    
+    temp->next = NULL; // Set the 'next' pointer of the new node to NULL
+    
+    // Check if the linked list is empty (head is NULL)
+    if (head == NULL) {
+        head = temp; // If empty, make the new node as the head of the linked list
+    } else {
+        // If the linked list is not empty, find the last node in the list
+        struct node* ptr = head; // Create a pointer 'ptr' and set it to the head of the list
+        
+        // Traverse the list until the last node is reached (ptr->next is NULL)
+        while (ptr->next != NULL) {
+            ptr = ptr->next; // Move 'ptr' to the next node
+        }
+        
+        ptr->next = temp; // Insert the new node at the end by making the last node's 'next' point to the new node
+    }
+}

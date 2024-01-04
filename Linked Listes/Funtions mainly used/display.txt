@@ -1,0 +1,18 @@
+// Function to print the entire content of the linked list
+void display() {
+    if (head == NULL) {
+        printf("Linked List is Empty\n"); // If the linked list is empty, display a message and return
+        return;
+    }
+    
+    printf("LinkedList: "); // Print a label to indicate the beginning of the linked list
+    struct node* ptr = head; // Create a pointer 'ptr' and set it to the head of the list
+    
+    // Traverse the linked list and print the data of each node
+    while (ptr != NULL) { // Continue until reaching the end of the list (NULL)
+        printf("%d ", ptr->data); // Print the data of the current node
+        ptr = ptr->next; // Move 'ptr' to the next node
+    }
+    
+    printf("\n"); // Print a newline character to format the output
+}
